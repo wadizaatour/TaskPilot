@@ -49,6 +49,28 @@
           </svg>
           Add Task
         </NuxtLink>
+
+        <NuxtLink 
+          to="/analytics" 
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          active-class="bg-blue-50 text-blue-700 font-medium"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+          </svg>
+          Analytics
+        </NuxtLink>
+
+        <NuxtLink 
+          to="/profile" 
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          active-class="bg-blue-50 text-blue-700 font-medium"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+          </svg>
+          Profile
+        </NuxtLink>
       </nav>
       
       <div class="p-4 border-t border-gray-200">
@@ -92,27 +114,27 @@
       </main>
       
       <!-- Mobile bottom navigation -->
-      <nav class="lg:hidden bg-white border-t border-gray-200 px-2 py-2 shadow-lg">
+      <nav class="lg:hidden bg-white border-t border-gray-200 px-1 py-2 shadow-lg">
         <div class="flex items-center justify-around">
           <NuxtLink 
             to="/" 
-            class="flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-colors"
+            class="flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-colors"
             active-class="text-blue-600"
             inactive-class="text-gray-500"
           >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
             </svg>
-            <span class="text-xs font-medium">Dashboard</span>
+            <span class="text-xs font-medium">Home</span>
           </NuxtLink>
           
           <NuxtLink 
             to="/tasks" 
-            class="flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-colors"
+            class="flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-colors"
             active-class="text-blue-600"
             inactive-class="text-gray-500"
           >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
             </svg>
             <span class="text-xs font-medium">Tasks</span>
@@ -120,16 +142,40 @@
           
           <NuxtLink 
             to="/add" 
-            class="flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-colors"
+            class="flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-colors"
             active-class="text-blue-600"
             inactive-class="text-gray-500"
           >
-            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mb-1">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div class="w-7 h-7 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
               </svg>
             </div>
             <span class="text-xs font-medium text-blue-600">Add</span>
+          </NuxtLink>
+
+          <NuxtLink 
+            to="/analytics" 
+            class="flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-colors"
+            active-class="text-blue-600"
+            inactive-class="text-gray-500"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+            </svg>
+            <span class="text-xs font-medium">Charts</span>
+          </NuxtLink>
+
+          <NuxtLink 
+            to="/profile" 
+            class="flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-colors"
+            active-class="text-blue-600"
+            inactive-class="text-gray-500"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-xs font-medium">Profile</span>
           </NuxtLink>
         </div>
       </nav>

@@ -63,7 +63,7 @@
     </div>
 
     <!-- Today's Suggestions -->
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 mb-6">
       <div class="flex items-center justify-between mb-4 sm:mb-6">
         <div>
           <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-1">Today's Suggestions</h2>
@@ -99,6 +99,12 @@
         </NuxtLink>
       </div>
     </div>
+
+    <!-- Gamification Widgets -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      <GamificationWidget />
+      <BadgeCard />
+    </div>
   </div>
 </template>
 
@@ -106,6 +112,8 @@
 import { computed, onMounted } from 'vue'
 import { useTaskStore } from '../stores/task'
 import TaskList from './TaskList.vue'
+import GamificationWidget from './GamificationWidget.vue'
+import BadgeCard from './BadgeCard.vue'
 
 const store = useTaskStore()
 
