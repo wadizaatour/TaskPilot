@@ -109,12 +109,14 @@
         </div>
       </header>
       
-      <main class="flex-1 overflow-y-auto pb-20 lg:pb-0">
-        <slot />
+      <main class="flex-1 overflow-y-auto overflow-x-hidden pb-24 lg:pb-0">
+        <div class="h-full">
+          <slot />
+        </div>
       </main>
       
       <!-- Mobile bottom navigation -->
-      <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-1 py-2 shadow-lg z-50">
+      <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-1 py-2 shadow-lg z-50" style="padding-bottom: max(0.5rem, env(safe-area-inset-bottom))">
         <div class="flex items-center justify-around">
           <NuxtLink 
             to="/" 
