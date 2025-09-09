@@ -109,12 +109,12 @@
         </div>
       </header>
       
-      <main class="flex-1 overflow-y-auto">
+      <main class="flex-1 overflow-y-auto pb-20 lg:pb-0">
         <slot />
       </main>
       
       <!-- Mobile bottom navigation -->
-      <nav class="lg:hidden bg-white border-t border-gray-200 px-1 py-2 shadow-lg">
+      <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-1 py-2 shadow-lg z-50">
         <div class="flex items-center justify-around">
           <NuxtLink 
             to="/" 
