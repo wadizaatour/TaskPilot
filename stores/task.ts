@@ -34,6 +34,7 @@ export type UserStats = {
 }
 
 export type UserSettings = {
+  userName?: string
   dailyGoal: number
   weeklyGoals: Record<string, number>
   customCategories: Array<{
@@ -74,11 +75,13 @@ export const useTaskStore = defineStore('task', {
       currentStreak: 0,
       longestStreak: 0,
       tasksCompleted: 0,
-      categoryStreaks: {}
+      categoryStreaks: {},
+         weeklyGoals: {}
     },
     badges: defaultBadges,
     unlockedBadges: [],
     settings: {
+      userName: 'TaskPilot User',
       dailyGoal: 3,
       weeklyGoals: {},
       customCategories: [
@@ -156,7 +159,8 @@ export const useTaskStore = defineStore('task', {
         currentStreak: 0,
         longestStreak: 0,
         tasksCompleted: 0,
-        categoryStreaks: {}
+        categoryStreaks: {},
+        weeklyGoals: {}
       }
       
       const completedTasks = this.tasks
@@ -299,6 +303,42 @@ export const useTaskStore = defineStore('task', {
       
       sampleTasks.forEach(task => this.addTask(task))
       this.smartSuggestTasks(3)
+    },
+    updateSettings(newSettings: Partial<UserSettings>) {
+      this.settings = { ...this.settings, ...newSettings }
+      this.save()
+    },
+    resetAllData() {
+      // Reset to initial state
+      this.tasks = []
+      this.todaySuggestions = []
+      this.userStats = {
+        totalPoints: 0,
+        currentStreak: 0,
+        longestStreak: 0,
+        tasksCompleted: 0,
+        categoryStreaks: {},
+        weeklyGoals: {}
+      }
+      this.unlockedBadges = []
+      this.settings = {
+        userName: 'TaskPilot User',
+        dailyGoal: 3,
+        weeklyGoals: {},
+        customCategories: [
+          { name: 'Health', icon: '🏥', color: 'green' },
+          { name: 'Fitness', icon: '💪', color: 'blue' },
+          { name: 'Work', icon: '💼', color: 'gray' },
+          { name: 'Study', icon: '📚', color: 'purple' },
+          { name: 'Cleaning', icon: '🧹', color: 'yellow' },
+          { name: 'Cooking', icon: '🍳', color: 'orange' },
+          { name: 'Shopping', icon: '🛒', color: 'pink' },
+          { name: 'Social', icon: '👥', color: 'indigo' },
+          { name: 'Personal', icon: '👤', color: 'teal' },
+          { name: 'Hobbies', icon: '🎨', color: 'red' }
+        ]
+      }
+      this.save()
     }
   },
   getters: {
